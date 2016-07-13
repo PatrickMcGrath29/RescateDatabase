@@ -16,3 +16,10 @@ CREATE TABLE organization
     call_for_grants		BOOLEAN 		NOT NULL
 );
 
+DROP TABLE IF EXISTS user;
+
+CREATE TABLE user
+(
+	user_name		VARCHAR(50)		NOT NULL	PRIMARY KEY,
+    user_pass		VARCHAR(50)		NOT NULL		
+);
