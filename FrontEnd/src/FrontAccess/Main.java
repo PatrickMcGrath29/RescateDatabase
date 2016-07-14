@@ -1,5 +1,7 @@
 package FrontAccess;
 
+import FrontAccess.Controller.FrontEndController;
+import FrontAccess.Model.FrontEndModel;
 import FrontAccess.View.FrontPage;
 import FrontAccess.View.IView;
 
@@ -9,8 +11,8 @@ import FrontAccess.View.IView;
 public class Main {
 
     public static void main(String[] args) {
-        IView view = new FrontPage();
-        view.initialize();
+        FrontEndController controller = new FrontEndController(new FrontEndModel());
+
     }
 
 }

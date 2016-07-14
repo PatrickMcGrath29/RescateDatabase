@@ -4,6 +4,7 @@ import FrontAccess.Model.IModel;
 import FrontAccess.View.FrontPage;
 import FrontAccess.View.IView;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -12,7 +13,7 @@ import java.sql.SQLException;
 /**
  * Controller Class with all of the logic to manage the Views
  */
-public class FrontEndController implements IController, ActionListener {
+public class FrontEndController implements ActionListener {
 
     private Connection conn = null;
     private IModel model;
@@ -23,11 +24,7 @@ public class FrontEndController implements IController, ActionListener {
         this.setConnectionSource();
         this.setView();
         this.view.setController(this);
-    }
-
-    @Override
-    public void run() {
-
+        this.view.initialize();
     }
 
     private void setConnectionSource() {
@@ -36,19 +33,31 @@ public class FrontEndController implements IController, ActionListener {
             System.out.println("Connection Established.");
         } catch (SQLException e) {
             System.out.println("Connection could not be established.");
+            e.printStackTrace();
         }
     }
 
-    @Override
-    public void setView() {
+    private void setView() {
         this.view = new FrontPage();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
         switch (e.getActionCommand()) {
+            case "LOGIN":
+                if (this.model.verifyLogin(this.view.getUserPass())) {
+                    this.view.setNextWindow("MAIN");
+                } else {
+                    JOptionPane pane = new JOptionPane("Invalid Login");
 
+                }
+                break;
+            case "BROWSE":
+                this.view.setNextWindow("BROWSE");
+                break;
+            case "ADDDATA":
+                this.view.setNextWindow("ADDDATA");
+                break;
         }
 
     }

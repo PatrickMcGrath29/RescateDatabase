@@ -1,18 +1,20 @@
 package FrontAccess.View;
 
-import FrontAccess.Controller.IController;
+import FrontAccess.Controller.FrontEndController;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 /**
  * View Class that creates the front page for the front end application.
  */
 public class FrontPage extends JFrame implements IView {
+    private JTextField usernameText = new JTextField(20);
+    private JPasswordField passwordText = new JPasswordField(20);
 
     private JPanel currentFrame;
-    private IController controller;
+    private FrontEndController controller;
 
     public FrontPage() {
         this.setVisible(true);
@@ -22,26 +24,26 @@ public class FrontPage extends JFrame implements IView {
         this.setTitle("Rescate Database Manager");
     }
 
-
     @Override
-    public void setController(IController controller) {
+    public void setController(FrontEndController controller) {
         this.controller = controller;
     }
 
     @Override
     public void initialize() {
-        this.currentFrame = this.setFrontPage();
+        this.currentFrame = setFrontPage();
         this.add(currentFrame);
-        this.pack();
+
     }
 
     private JPanel setFrontPage() {
         JPanel panel = new JPanel(new GridLayout(0, 1));
         JLabel username = new JLabel("Username:");
         JLabel password = new JLabel("Password:");
-        JTextField usernameText = new JTextField(15);
-        JPasswordField passwordText = new JPasswordField(15);
         JButton login = new JButton("Login");
+
+        login.setActionCommand("LOGIN");
+        login.addActionListener(controller);
 
         panel.add(username);
         panel.add(usernameText);
@@ -49,11 +51,73 @@ public class FrontPage extends JFrame implements IView {
         panel.add(passwordText);
         panel.add(login);
 
-        login.setActionCommand("LOGIN");
-        login.addActionListener();
+        return panel;
+    }
+
+    public Dimension getPreferredSize() {
+        return new Dimension(300, 300);
+    }
+
+    @Override
+    public ArrayList<String> getUserPass() {
+        ArrayList<String> items = new ArrayList<String>();
+        items.add(this.usernameText.getText());
+
+        StringBuilder password = new StringBuilder();
+        for (char c : this.passwordText.getPassword()) {
+            password.append(c);
+        }
+        items.add(password.toString());
+        return items;
+    }
+
+    private JPanel setBrowsePage() {
+        JPanel panel = new JPanel(new GridLayout(0, 1));
+
 
         return panel;
     }
 
+    private JPanel setAddDataPage() {
+        JPanel panel = new JPanel(new GridLayout(0, 1));
+
+
+        return panel;
+    }
+
+    @Override
+    public void setNextWindow(String nextWindow) {
+        this.remove(currentFrame);
+        switch (nextWindow) {
+            case "MAIN":
+                currentFrame = this.setMainPage();
+                break;
+            case "BROWSE":
+                currentFrame = this.setBrowsePage();
+                break;
+            case "ADDDATA":
+                currentFrame = this.setAddDataPage();
+                break;
+        }
+        this.add(currentFrame);
+        this.revalidate();
+        this.repaint();
+    }
+
+    private JPanel setMainPage() {
+        JPanel panel = new JPanel(new GridLayout(0, 1));
+        JButton browse = new JButton("Browse Data");
+        JButton addData = new JButton("Add Data");
+
+        browse.setActionCommand("BROWSE");
+        browse.addActionListener(controller);
+        addData.setActionCommand("ADDDATA");
+        addData.addActionListener(controller);
+
+        panel.add(browse);
+        panel.add(addData);
+
+        return panel;
+    }
 }
 

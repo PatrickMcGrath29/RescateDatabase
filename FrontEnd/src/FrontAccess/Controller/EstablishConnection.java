@@ -12,12 +12,11 @@ public class EstablishConnection {
 
 
     public static Connection getConnection() throws SQLException {
-        final String serverName = "cs3200db.crhtlnps61ag.us-east-1.rds.amazonaws.com";
-        final int portNumber = 3307;
-        final String dbName = "rescate_orgs";
+        String serverName = "cs3200db.crhtlnps61ag.us-east-1.rds.amazonaws.com";
+        int portNumber = 3307;
+        String dbName = "rescate_orgs";
         String dbuserName = "PatrickMcGrath29";
         String dbpassword = "zilbyrox";
-
 
         Connection conn = null;
         Properties connectionProps = new Properties();

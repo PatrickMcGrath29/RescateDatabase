@@ -1,8 +1,8 @@
 package FrontAccess.View;
 
-import FrontAccess.Controller.IController;
+import FrontAccess.Controller.FrontEndController;
 
-import javax.swing.*;
+import java.util.ArrayList;
 
 /**
  * Created by patrickmcgrath on 7/13/16.
@@ -15,7 +15,11 @@ public interface IView {
     void initialize();
 
     /**
-     *
+     * Sets the controller for this view, allowing the controller to handle the action events
      */
-    void setController(IController controller);
+    void setController(FrontEndController controller);
+
+    ArrayList<String> getUserPass();
+
+    void setNextWindow(String nextWindow);
 }
