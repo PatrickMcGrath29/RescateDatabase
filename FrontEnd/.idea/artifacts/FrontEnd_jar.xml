@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="FrontEnd:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FrontEnd_jar</output-path>
+    <root id="archive" name="FrontEnd.jar">
+      <element id="module-output" name="FrontEnd" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/mysql-connector-java-5.1.39 3/mysql-connector-java-5.1.39-bin.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

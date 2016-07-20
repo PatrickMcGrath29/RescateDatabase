@@ -7,10 +7,10 @@ DROP TABLE IF EXISTS organization;
 CREATE TABLE organization 
 (
 	org_name			VARCHAR(50) 	NOT NULL,
-    org_id				INT				PRIMARY KEY,
+    org_id				INT				PRIMARY KEY		AUTO_INCREMENT,
     org_country			VARCHAR(30),
     org_website			VARCHAR(100),
-    donated_to_date		INT,
+    donated_to_date		VARCHAR(100),
     area_of_focus		TINYTEXT,
     contact_information	TEXT			NOT NULL,
     call_for_grants		BOOLEAN 		NOT NULL
@@ -23,3 +23,8 @@ CREATE TABLE user
 	user_name		VARCHAR(50)		NOT NULL	PRIMARY KEY,
     user_pass		VARCHAR(50)		NOT NULL		
 );
+
+INSERT INTO user (user_name, user_pass) VALUES ("bob", "123");
+
+INSERT INTO organization (org_name, org_country, org_website, donated_to_date, area_of_focus, contact_information, call_for_grants) 
+VALUES ("Rescate", "Spain", "www.ongrescate.org", 0, "Refugees", "617-834-9660", true);

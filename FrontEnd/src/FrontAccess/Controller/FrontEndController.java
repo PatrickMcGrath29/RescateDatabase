@@ -49,15 +49,27 @@ public class FrontEndController implements ActionListener {
                     this.view.setNextWindow("MAIN");
                 } else {
                     JOptionPane pane = new JOptionPane("Invalid Login");
-
+                    pane.setVisible(true);
                 }
                 break;
             case "BROWSE":
+                this.view.setBrowseData(this.model.getBrowseData());
                 this.view.setNextWindow("BROWSE");
                 break;
             case "ADDDATA":
                 this.view.setNextWindow("ADDDATA");
                 break;
+            case "SUBMIT":
+                this.model.addData(this.view.getOrgData());
+                break;
+            case "BACK":
+                this.view.setNextWindow("MAIN");
+                break;
+            case "LOGOUT":
+                this.view.setNextWindow("LOGIN");
+                break;
+            default:
+                throw new IllegalArgumentException("Unknown Action Command!");
         }
 
     }

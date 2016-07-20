@@ -22,4 +22,8 @@ public interface IView {
     ArrayList<String> getUserPass();
 
     void setNextWindow(String nextWindow);
+
+    void setBrowseData(ArrayList<String> data);
+
+    ArrayList<String> getOrgData();
 }

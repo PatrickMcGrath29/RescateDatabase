@@ -10,4 +10,8 @@ public interface IModel {
 
     boolean verifyLogin(ArrayList<String> userAndPass);
 
+    ArrayList<String> getBrowseData();
+
+    void addData(ArrayList<String> data);
+
 }
