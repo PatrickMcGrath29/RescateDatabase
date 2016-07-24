@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39bcab4f-fc3a-4692-9622-9e2300758089" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FrontAccess/Controller/FrontEndController.java" afterPath="$PROJECT_DIR$/src/FrontAccess/Controller/FrontEndController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FrontAccess/Model/FrontEndModel.java" afterPath="$PROJECT_DIR$/src/FrontAccess/Model/FrontEndModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FrontAccess/Model/IModel.java" afterPath="$PROJECT_DIR$/src/FrontAccess/Model/IModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FrontAccess/View/FrontPage.java" afterPath="$PROJECT_DIR$/src/FrontAccess/View/FrontPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FrontAccess/View/IView.java" afterPath="$PROJECT_DIR$/src/FrontAccess/View/IView.java" />
     </list>
     <ignored path="FrontEnd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -99,15 +93,15 @@
       <file leaf-file-name="FrontEndModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FrontAccess/Model/FrontEndModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+            <state relative-caret-position="381">
+              <caret line="90" column="65" selection-start-line="90" selection-start-column="65" selection-end-line="90" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1384#1392#0" expanded="true" />
                 <element signature="e#1449#1457#0" expanded="true" />
-                <marker date="1469010343000" expanded="true" signature="607:712" placeholder="SELECT count... user" />
-                <marker date="1469010343000" expanded="true" signature="1872:1898" placeholder="SELECT * FRO... ORGANIZATIONS" />
-                <marker date="1469010343000" expanded="true" signature="3017:3178" placeholder="INSERT INTO organization... " />
+                <marker date="1469035911000" expanded="true" signature="607:712" placeholder="SELECT count... user" />
+                <marker date="1469035911000" expanded="true" signature="1872:1898" placeholder="SELECT * FRO... ORGANIZATIONS" />
+                <marker date="1469035911000" expanded="true" signature="3016:3177" placeholder="INSERT INTO organization... " />
               </folding>
             </state>
           </provider>
@@ -800,12 +794,12 @@
       <updated>1468407162748</updated>
       <workItem from="1468407164167" duration="3455000" />
       <workItem from="1468411327113" duration="6781000" />
-      <workItem from="1468833251510" duration="9863000" />
+      <workItem from="1468833251510" duration="10680000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20099000" />
+    <option name="totallyTimeSpent" value="20916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="838" extended-state="6" />
@@ -995,15 +989,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FrontAccess/Model/FrontEndModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
+        <state relative-caret-position="381">
+          <caret line="90" column="65" selection-start-line="90" selection-start-column="65" selection-end-line="90" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1384#1392#0" expanded="true" />
             <element signature="e#1449#1457#0" expanded="true" />
-            <marker date="1469010343000" expanded="true" signature="607:712" placeholder="SELECT count... user" />
-            <marker date="1469010343000" expanded="true" signature="1872:1898" placeholder="SELECT * FRO... ORGANIZATIONS" />
-            <marker date="1469010343000" expanded="true" signature="3017:3178" placeholder="INSERT INTO organization... " />
+            <marker date="1469035911000" expanded="true" signature="607:712" placeholder="SELECT count... user" />
+            <marker date="1469035911000" expanded="true" signature="1872:1898" placeholder="SELECT * FRO... ORGANIZATIONS" />
+            <marker date="1469035911000" expanded="true" signature="3016:3177" placeholder="INSERT INTO organization... " />
           </folding>
         </state>
       </provider>

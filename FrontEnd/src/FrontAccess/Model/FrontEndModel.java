@@ -83,7 +83,6 @@ public class FrontEndModel implements IModel {
         return data;
     }
 
-
     @Override
     public void addData(ArrayList<String> data) {
         String sqlInsert = "INSERT INTO organization (org_name, org_country, org_website, " +

@@ -24,7 +24,5 @@ CREATE TABLE user
     user_pass		VARCHAR(50)		NOT NULL		
 );
 
-INSERT INTO user (user_name, user_pass) VALUES ("bob", "123");
+INSERT INTO user (user_name, user_pass) VALUES ("patrickmcgrath", "rescatelogin!");
 
-INSERT INTO organization (org_name, org_country, org_website, donated_to_date, area_of_focus, contact_information, call_for_grants) 
-VALUES ("Rescate", "Spain", "www.ongrescate.org", 0, "Refugees", "617-834-9660", true);
