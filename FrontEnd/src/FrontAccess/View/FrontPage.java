@@ -15,7 +15,6 @@ public class FrontPage extends JFrame implements IView {
     private JPasswordField passwordText = new JPasswordField(20);
     private ArrayList<String> browseData;
     private int currentBrowse;
-    private JLabel textArea = new JLabel();
     private JPanel currentFrame;
     private FrontEndController controller;
     private JTextField name, country, website, areaOfFocus, contactInfo;
@@ -79,9 +78,24 @@ public class FrontPage extends JFrame implements IView {
     }
 
     private JPanel setBrowsePage() {
-        JPanel panel = new JPanel(new FlowLayout());
+        JPanel panel = new JPanel(new GridLayout(0, 1));
+
+        JLabel name, country, website, areaOfFocus, contactInfo, callForGrants;
+
         if (!(this.browseData.size() < 1)) {
-            this.textArea.setText(this.browseData.get(0));
+            name = new JLabel(this.browseData.get(0));
+            country = new JLabel(this.browseData.get(1));
+            website = new JLabel(this.browseData.get(2));
+            areaOfFocus = new JLabel(this.browseData.get(4));
+            contactInfo = new JLabel(this.browseData.get(5));
+            callForGrants = new JLabel(this.browseData.get(6));
+
+            panel.add(name);
+            panel.add(country);
+            panel.add(website);
+            panel.add(areaOfFocus);
+            panel.add(contactInfo);
+            panel.add(callForGrants);
         }
         JButton next = new JButton("Next");
         JButton previous = new JButton("Previous");
@@ -89,7 +103,9 @@ public class FrontPage extends JFrame implements IView {
         JTextField search = new JTextField(15);
         JButton searchButton = new JButton("Search");
 
-        panel.add(textArea);
+
+
+
         panel.add(previous);
         panel.add(next);
         panel.add(searchLabel);
@@ -149,12 +165,22 @@ public class FrontPage extends JFrame implements IView {
             case "LOGIN":
                 currentFrame = this.setFrontPage();
                 break;
+            default:
+                break;
         }
         this.add(currentFrame);
         this.revalidate();
         this.repaint();
         this.setSize(500, 500);
         this.pack();
+        switch (nextWindow) {
+            case "INVALIDLOGIN":
+                JOptionPane.showMessageDialog(this, "Invalid Login Credentials");
+                break;
+            case "SERVERERROR":
+                JOptionPane.showMessageDialog(this, "Server Error - Could not connect to Database");
+                break;
+        }
     }
 
     private JPanel setMainPage() {

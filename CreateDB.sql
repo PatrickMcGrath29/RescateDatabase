@@ -26,3 +26,4 @@ CREATE TABLE user
 
 INSERT INTO user (user_name, user_pass) VALUES ("patrickmcgrath", "rescatelogin!");
 
+

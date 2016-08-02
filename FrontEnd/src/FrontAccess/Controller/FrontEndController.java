@@ -4,7 +4,6 @@ import FrontAccess.Model.IModel;
 import FrontAccess.View.FrontPage;
 import FrontAccess.View.IView;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -45,11 +44,15 @@ public class FrontEndController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "LOGIN":
-                if (this.model.verifyLogin(this.view.getUserPass())) {
-                    this.view.setNextWindow("MAIN");
-                } else {
-                    JOptionPane pane = new JOptionPane("Invalid Login");
-                    pane.setVisible(true);
+                try {
+                    if (this.model.verifyLogin(this.view.getUserPass())) {
+                        this.view.setNextWindow("MAIN");
+                    } else {
+                        this.view.setNextWindow("INVALIDLOGIN");
+                    }
+                } catch (Exception e1) {
+                    System.out.println("Catch");
+                    this.view.setNextWindow("SERVERERROR");
                 }
                 break;
             case "BROWSE":

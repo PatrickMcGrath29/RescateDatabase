@@ -61,21 +61,20 @@ public class FrontEndModel implements IModel {
             ResultSet rset = stmt.executeQuery(sqlQuery);
 
             while (rset.next()) {
-                String addItem = "";
 
-                addItem += components.get(0) + rset.getString(1) + "\n";
-                addItem += components.get(1) + rset.getString(3) + "\n";
-                addItem += components.get(2) + rset.getString(4) + "\n";
-                addItem += components.get(3) + rset.getString(5) + "\n";
-                addItem += components.get(4) + rset.getString(6) + "\n";
-                addItem += components.get(5) + rset.getString(7) + "\n";
+                data.add(components.get(0) + rset.getString(1));
+                data.add(components.get(1) + rset.getString(3));
+                data.add(components.get(2) + rset.getString(4));
+                data.add(components.get(3) + rset.getString(5));
+                data.add(components.get(4) + rset.getString(6));
+                data.add(components.get(5) + rset.getString(7));
+
                 boolean temp = rset.getBoolean(8);
                 if (temp) {
-                    addItem += components.get(6) + "Yes";
+                    data.add(components.get(6) + "Yes");
                 } else {
-                    addItem += components.get(6) + "No";
+                    data.add(components.get(6) + "No");
                 }
-                data.add(addItem);
             }
         } catch (SQLException e) {
             e.printStackTrace();
